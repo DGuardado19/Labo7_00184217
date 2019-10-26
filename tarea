@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int lista [] = { 1, 5, 8, 9, 10, 17, 17, 20 };
+	
+	int n = 4; 
+		
+	int array[n + 1];
+
+	for (int i = 0; i <= n; i++)
+		array[i] = 0;
+	
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++)
+			array[i] = max(array[i], lista[j - 1] + array[i - j]);
+	}
+
+
+	cout << array[n] << endl;
+	
+	return 0;
+}
